@@ -1,0 +1,14 @@
+conda create -n SRA_tools -c conda-forge -c bioconda sra-tools -y
+conda activate SRA_tools
+
+prefetch SRR25629155
+fasterq-dump SRR25629155 --split-files
+gzip SRR25629155_1.fastq
+gzip SRR25629155_2.fastq
+
+zcat SRR25629155_1.fastq.gz | head -n 10
+
+
+Id flow cell: HWFV2DRXY
+
+

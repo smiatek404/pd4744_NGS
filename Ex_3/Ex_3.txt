@@ -1,0 +1,20 @@
+prefetch SRR25629154
+prefetch SRR25629153
+
+fasterq-dump SRR25629154 --split-files
+fasterq-dump SRR25629153 --split-files
+
+gzip SRR25629154_1.fastq
+gzip SRR25629154_2.fastq
+gzip SRR25629153_1.fastq
+gzip SRR25629153_2.fastq
+
+mkdir -p fastqc_reports
+
+
+fastqc SRR25629155_1.fastq.gz SRR25629155_2.fastq.gz SRR25629154_1.fastq.gz SRR25629154_2.fastq.gz SRR25629153_1.fastq.gz SRR25629153_2.fastq.gz --outdir fastqc_reports --threads 4
+
+conda install -c bioconda multiqc -y
+
+multiqc fastqc_reports/ -o multiqc_report
+

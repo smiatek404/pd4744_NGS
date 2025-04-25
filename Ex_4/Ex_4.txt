@@ -1,0 +1,12 @@
+conda activate SRA_tools
+conda install -c bioconda trimmomatic -y
+
+trimmomatic PE -threads 4 -phred33 SRR25629155_1.fastq.gz SRR25629155_2.fastq.gz SRR25629155_1_trimmed.fastq.gz /dev/null SRR25629155_2_trimmed.fastq.gz /dev/null LEADING:20 TRAILING:20 SLIDINGWINDOW:5:20 MINLEN:50
+
+trimmomatic PE -threads 4 -phred33 SRR25629155_1.fastq.gz SRR25629155_2.fastq.gz SRR25629155_1_trimmed.fastq.gz /dev/null SRR25629155_2_trimmed.fastq.gz /dev/null LEADING:20 TRAILING:20  SLIDINGWINDOW:5:20 MINLEN:50 &> trimmomatic_stats.txt
+
+mkdir -p fastqc_trimmed_reports
+
+fastqc SRR25629155_1_trimmed.fastq.gz SRR25629155_2_trimmed.fastq.gz --outdir fastqc_trimmed_reports --threads 4
+
+

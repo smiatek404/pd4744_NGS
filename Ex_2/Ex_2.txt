@@ -1,0 +1,5 @@
+mkdir -p fastqc_reports
+
+fastqc SRR25629155_1.fastq.gz SRR25629155_2.fastq.gz \
+  --outdir fastqc_reports \
+  --threads 4

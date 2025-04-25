@@ -1,0 +1,5 @@
+conda activate mapping
+conda install samtools -y
+
+chmod +x mapping_pipeline.sh
+./mapping_pipeline.sh
