@@ -1,0 +1,93 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "",
+    "comments": [],
+    "format-version": "0.1",
+    "name": "Pre-processing",
+    "report": {
+        "markdown": "\n# Workflow Execution Report\n\n## Workflow Inputs\n```galaxy\ninvocation_inputs()\n```\n\n## Workflow Outputs\n```galaxy\ninvocation_outputs()\n```\n\n## Workflow\n```galaxy\nworkflow_display()\n```\n"
+    },
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [],
+            "label": null,
+            "name": "Input dataset collection",
+            "outputs": [],
+            "position": {
+                "left": 0,
+                "top": 5.745853424072237
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null, \"collection_type\": \"list:paired\"}",
+            "tool_version": null,
+            "type": "data_collection_input",
+            "uuid": "02ce63cd-bd41-495b-bf30-aedb3082cf64",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "1": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/pjbriggs/trimmomatic/trimmomatic/0.39+galaxy2",
+            "errors": null,
+            "id": 1,
+            "input_connections": {
+                "readtype|fastq_pair": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Trimmomatic",
+                    "name": "readtype"
+                }
+            ],
+            "label": null,
+            "name": "Trimmomatic",
+            "outputs": [
+                {
+                    "name": "fastq_out_paired",
+                    "type": "input"
+                },
+                {
+                    "name": "fastq_out_unpaired",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 291.25,
+                "top": 0
+            },
+            "post_job_actions": {
+                "RenameDatasetActionfastq_out_paired": {
+                    "action_arguments": {
+                        "newname": "E.Coli___ibuprofen_trimmed"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "fastq_out_paired"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/pjbriggs/trimmomatic/trimmomatic/0.39+galaxy2",
+            "tool_shed_repository": {
+                "changeset_revision": "b9aaed85cbd1",
+                "name": "trimmomatic",
+                "owner": "pjbriggs",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"illuminaclip\": {\"do_illuminaclip\": \"no\", \"__current_case__\": 1}, \"operations\": [{\"__index__\": 0, \"operation\": {\"name\": \"HEADCROP\", \"__current_case__\": 5, \"headcrop\": \"20\"}}, {\"__index__\": 1, \"operation\": {\"name\": \"SLIDINGWINDOW\", \"__current_case__\": 0, \"window_size\": \"5\", \"required_quality\": \"20\"}}, {\"__index__\": 2, \"operation\": {\"name\": \"MINLEN\", \"__current_case__\": 1, \"minlen\": \"50\"}}], \"output_err\": false, \"output_logs\": false, \"quality_score\": null, \"readtype\": {\"single_or_paired\": \"collection\", \"__current_case__\": 2, \"fastq_pair\": {\"__class__\": \"RuntimeValue\"}}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.39+galaxy2",
+            "type": "tool",
+            "uuid": "dcd51585-0e29-4269-8eae-85e6c689f818",
+            "when": null,
+            "workflow_outputs": []
+        }
+    },
+    "tags": [],
+    "uuid": "dd378716-f61b-4480-a43f-3f5e6921ab18",
+    "version": 2
+}
