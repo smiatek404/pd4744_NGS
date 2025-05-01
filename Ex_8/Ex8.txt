@@ -1,0 +1,24 @@
+# Galaxy UI kroki
+
+1. Pobranie plików potrzebnych do analizy
+   - 4 pliki FASTQ 
+   - GTF annotation from GENCODE
+
+2. Stworzenie kolekcji z plikó
+   WT_rep1.fastq
+   WT_rep2.fastq
+   MT_rep1.fastq
+   MT_rep2.fastq
+
+3. Uruchomienie FastQC
+
+4. Uruchomienie MultiQC
+
+5. Uruchomienie STAR z parametrami:
+   - Built-in genome: hg38
+   - Zewnętrzny plik GTF: gencode.v45.annotation.gtf
+   - Junctions length: 59
+   - Output: GeneCounts
+
+6. Plik ze zliczeniami genów załączony w folderze z zadaniem:
+ 28_RNA STAR on collection 9: reads per gene
