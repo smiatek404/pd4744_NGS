@@ -1,0 +1,5 @@
+MT_rep2
+
+84,98% odczytów to "+-,-+" → co wskazuje na reverse strand-specific library.
+
+"+-/ -+" oznacza, że odczyty są przeciwsobne do transkryptu (antisense-strand, czyli typ reverse).
